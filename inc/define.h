@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:40 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/22 15:43:32 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:12:38 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # define Y 1
 # define Z 2
 
-#define WINDOW_WIDTH 1920
-#define WINDOW_HEIGHT 1080
+# define WINDOW_WIDTH 1920
+# define WINDOW_HEIGHT 1080
 
 # define ROJO 		0xc1272d
 # define VERDE		0x33cc55
@@ -40,6 +40,22 @@ typedef struct	s_data {
 	int		endian;
 }	t_data;
 
+typedef struct	s_point{
+	float	axes[3];
+	int		color;
+}	t_point;
+
+typedef struct	s_map{
+	t_point	*points;
+	t_point	limits;
+	t_point	source;
+	float	ang[3];
+	float	divisor;
+	int		len;
+	float	scale;
+	int		total;
+}	t_map;
+
 typedef struct	s_vars {
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -48,6 +64,7 @@ typedef struct	s_vars {
 typedef struct	s_meta {
 	t_vars	vars;
 	t_data	data;
+	t_map	map;
 }	t_meta;
 
 #endif

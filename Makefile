@@ -6,7 +6,7 @@
 #    By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 17:37:28 by framos-p          #+#    #+#              #
-#    Updated: 2022/12/22 15:56:36 by framos-p         ###   ########.fr        #
+#    Updated: 2023/01/09 12:31:08 by framos-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ WHITE = \033[0;97m
 
 #Sources
 
-SRC_FILES	=	draw_pixels  main keys utils
+SRC_FILES	=	draw_pixels  main keys utils read_maps error check_init_map
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 DEPS 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_FILES)))

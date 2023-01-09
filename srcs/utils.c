@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:46:20 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/22 16:37:44 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:48:50 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,4 @@ int	gradient(int startcolor, int endcolor, int len, int pix)
 	new[2] = (startcolor & 0xFF) + ft_round(pix * increment[2]);
 	newcolor = (new[0] << 16) + (new[1] << 8) + new[2];
 	return (newcolor);
-}
-
-int	terminate_windows(t_meta *param)
-{
-	if (param->data.img)
-		mlx_destroy_image(param->vars.mlx_ptr, param->data.img);
-	mlx_destroy_window(param->vars.mlx_ptr, param->vars.win_ptr);
-	exit(1);
-	return (0);
 }
