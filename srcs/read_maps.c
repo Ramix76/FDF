@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/09 15:30:27 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:17:34 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,41 @@
 #include "../lib/minilibx/minilibx_macos/mlx.h"
 #include "../inc/utils.h"
 #include "../inc/check_errors.h"
+
+void	ft_load_color(t_map *map, char *line)
+{
+	char **color;
+
+	if (ft_strchr(line, ','))
+	{
+		color = ft_split(line, ',');
+		map -> points[map -> len].color = (long)strtol(color[1] + 2, NULL, 16);
+		double_free(color);
+	}
+	else
+		map -> points[map -> len].color = 0xFF00FF;
+}
+
+void	save_map_points(t_map *map, int nline, char *line)
+{
+	int		i;
+	char	**splitted;
+
+	i = 0;
+	splitted = ft_split(line, ' ');
+	while (splitted[i] && splitted[i][0] != '\n')
+	{
+		map -> points[map -> len].axes[X] = i - map -> limits.axes[X];
+		map -> points[map -> len].axes[Y] = nline - map - limits.axes[Y];
+		if (!ft_isdigit(splitted[1][0]) && splitted[i][0] != '-')
+			terminate_map(ERR_MAP);
+		map -> points[map -> len].axes[Z] = ft_atoi(splitted[i]);
+		ft_load_map(map, splitted[i]);
+		i++;
+		map -> len++;
+	}
+	double_free(splitted);
+}
 
 int	load_map(char *file_name, t_map *map)
 {
@@ -38,7 +73,9 @@ int	load_map(char *file_name, t_map *map)
 		nline++;
 		free(line);
 		line = get_next_line(fd);
-		write(1, '.', 1);
+		ft_printf("\n Loading Map...\n");
 	}
 	return (1);
 }
+
+

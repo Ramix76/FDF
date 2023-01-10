@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:38:35 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/09 12:27:00 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:32:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ void	valid_map(char *file_name, t_map *map)
 		line = get_next_line(fd);
 		map -> total = map -> total + max;
 		map -> limits.axes[Y]++;
-		write(1, '*', 1);
+		ft_printf("\n ✅ \n");;
 	}
 	clode(fd);
 }
-
