@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:40 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/10 18:17:41 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:33:26 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define FLAMINGO	0xEC4B27
 # define JAFFA		0xEF8633
 # define SAFFRON	0xF3AF3D
+# define BLACK		0x000000
 
 typedef struct	s_data {
 	void	*img;

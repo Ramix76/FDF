@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 17:11:08 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/09 14:48:30 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:02:06 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ void	terminate_map(char *s)
 	exit(1);
 }
 
-int	double_free(char **ptr)
+void	double_free(char **ptr)
 {
 	int	i;
 
+	i = 0;
 	if (!ptr)
 		return ;
 	while (ptr[i])

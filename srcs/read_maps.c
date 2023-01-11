@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/10 18:17:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:13:46 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	save_map_points(t_map *map, int nline, char *line)
 	splitted = ft_split(line, ' ');
 	while (splitted[i] && splitted[i][0] != '\n')
 	{
-		map -> points[map -> len].axes[X] = i - map -> limits.axes[X];
-		map -> points[map -> len].axes[Y] = nline - map - limits.axes[Y];
+		map -> points[map -> len].axes[X] = i - (map -> limits.axes[X]);
+		map -> points[map -> len].axes[Y] = nline - (map -> limits.axes[Y]);
 		if (!ft_isdigit(splitted[1][0]) && splitted[i][0] != '-')
 			terminate_map(ERR_MAP);
 		map -> points[map -> len].axes[Z] = ft_atoi(splitted[i]);
-		ft_load_map(map, splitted[i]);
+		ft_load_color(map, splitted[i]);
 		i++;
 		map -> len++;
 	}
@@ -73,9 +73,7 @@ int	load_map(char *file_name, t_map *map)
 		nline++;
 		free(line);
 		line = get_next_line(fd);
-		ft_printf("\n Loading Map...\n");
+		write(1, "*", 1);
 	}
 	return (1);
 }
-
-
