@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:06 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 15:44:36 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:51:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	char	*pixel;
+	char	*dst;
 
-	pixel = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)pixel = color;
+	if (x >= WINDOW_WIDTH || y >= WINDOW_HEIGHT || x < 0 || y < 0)
+		return ;
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }
 
 int	draw_line(t_meta *meta, t_point start, t_point end)
@@ -32,17 +34,17 @@ int	draw_line(t_meta *meta, t_point start, t_point end)
 	alpha.axes[X] = end.axes[X] - start.axes[X];
 	alpha.axes[Y] = end.axes[Y] - start.axes[Y];
 	pixels = sqrt((alpha.axes[X] * alpha.axes[X]) + \
-		   	(alpha.axes[Y] * alpha.axes[Y]));
+		(alpha.axes[Y] * alpha.axes[Y]));
 	len = pixels;
-	alpha.axes[X] = alpha.axes[X] - pixels;
-	alpha.axes[Y] = alpha.axes[Y] - pixels;
+	alpha.axes[X] /= pixels;
+	alpha.axes[Y] /= pixels;
 	while (pixels > 0)
 	{
-		my_mlx_pixel_put(&meta -> data, pixel.axes[X], pixel.axes[Y], start.color);
-		pixel.axes[X] = pixel.axes[X] + alpha.axes[X];
-		pixel.axes[Y] = pixel.axes[Y] + alpha.axes[Y];
+		my_mlx_pixel_put(&meta -> data, pixel.axes[X], \
+				pixel.axes[Y], start.color);
+		pixel.axes[X] += alpha.axes[X];
+		pixel.axes[Y] += alpha.axes[Y];
 		pixels = pixels - 1;
 	}
 	return (1);
 }
-

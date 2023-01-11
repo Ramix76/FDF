@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:10:47 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 16:12:51 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:51:06 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ void	draw_map_lines(t_meta *meta, int len, t_map *map, t_point *proyected)
 		else if (i == 0 || (i + 1) % (int)map -> limits.axes[X] != 0)
 		{
 			draw_line(meta, proyected[i], proyected[i + 1]);
-			draw_line(meta, proyected[i], proyected[i + (int)map -> limits.axes[X]]);
+			draw_line(meta, proyected[i], proyected[i + \
+					(int)map -> limits.axes[X]]);
 		}
 		else
-			draw_line(meta, proyected[i], proyected[i + (int)map -> limits.axes[X]]);
+			draw_line(meta, proyected[i], proyected[i + \
+					(int)map -> limits.axes[X]]);
 		i++;
 	}
 }
@@ -75,5 +77,6 @@ void	draw_map(t_meta *meta)
 	copy_map_points(meta -> map.points, copy, meta -> map.total);
 	draw_map_lines(meta, meta -> map.total, &meta -> map, copy);
 	free(copy);
-	mlx_put_image_to_window(meta -> vars.mlx_ptr, meta -> vars.win_ptr, meta -> data.img, 0, 0);
+	mlx_put_image_to_window(meta -> vars.mlx_ptr, \
+			meta -> vars.win_ptr, meta -> data.img, 0, 0);
 }

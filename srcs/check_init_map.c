@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:38:35 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 16:13:15 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:47:59 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	valid_map(char *file_name, t_map *map)
 	int		max;
 
 	fd = open(file_name, O_RDONLY);
-	if (fd < 3)
+	if (fd < 2)
 		terminate_map(ERR_NOMAP);
 	line = get_next_line(fd);
 	while (line != NULL)

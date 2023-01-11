@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 16:13:46 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:15:33 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	save_map_points(t_map *map, int nline, char *line)
 	splitted = ft_split(line, ' ');
 	while (splitted[i] && splitted[i][0] != '\n')
 	{
-		map -> points[map -> len].axes[X] = i - (map -> limits.axes[X]);
-		map -> points[map -> len].axes[Y] = nline - (map -> limits.axes[Y]);
-		if (!ft_isdigit(splitted[1][0]) && splitted[i][0] != '-')
+		map -> points[map -> len].axes[X] = i - map -> limits.axes[X] / 2;
+		map -> points[map -> len].axes[Y] = nline - map -> limits.axes[Y] / 2;
+		if (!ft_isdigit(splitted[i][0]) && splitted[i][0] != '-')
 			terminate_map(ERR_MAP);
 		map -> points[map -> len].axes[Z] = ft_atoi(splitted[i]);
 		ft_load_color(map, splitted[i]);

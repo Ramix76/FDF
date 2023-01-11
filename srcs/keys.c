@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 17:15:55 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/23 15:08:30 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:52:18 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ static void	control_keys1(int key, t_meta *meta)
 int	key_press(int key, t_meta *param)
 {
 	control_keys1(key, param);
-	printf(" keypress: %d\n",key);
+	printf("keypress: %d\n", key);
 	return (0);
 }

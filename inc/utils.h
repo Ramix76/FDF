@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:57:37 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 16:01:36 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:05:28 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 int		draw_line(t_meta *meta, t_point start, t_point end);
 int		load_map(char *file_name, t_map *map);
-int		gradient(int startcolor, int endcolor, int len, int pix);
 int		terminate_windows(t_meta *param);
 int		key_press(int key, t_meta *param);
 int		check_line(char **map_line);
