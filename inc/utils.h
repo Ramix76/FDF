@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:57:37 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 17:05:28 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:56:14 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	draw_map_lines(t_meta *meta, int len, t_map *map, t_point *proyected);
 void	terminate_map(char *s);
 void	map_init(t_map *map);
 void	valid_map(char *file_name, t_map *map);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+int		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void	save_map_points(t_map *map, int nline, char *line);
 void	ft_load_color(t_map *map, char *line);
 

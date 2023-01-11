@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:40:53 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 19:12:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:36:23 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(int argc, char **argv)
 		WINDOW_WIDTH, WINDOW_HEIGHT, "FDF 42");
 	meta.data.img = mlx_new_image(meta.vars.mlx_ptr, \
 		WINDOW_WIDTH, WINDOW_HEIGHT);
-	meta.data.addr = mlx_get_data_addr(meta.data.img, &meta.data.bits_per_pixel, \
-		&meta.data.line_length, &meta.data.endian);
+	meta.data.addr = mlx_get_data_addr(meta.data.img, &meta.data.bits_per_pixel \
+		, &meta.data.line_length, &meta.data.endian);
 	mlx_hook(meta.vars.win_ptr, 2, 0, key_press, &meta);
 	mlx_hook(meta.vars.win_ptr, 17, 0, terminate_windows, &meta);
 	mlx_loop(meta.vars.mlx_ptr);

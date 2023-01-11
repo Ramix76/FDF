@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 19:15:33 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:43:03 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 void	ft_load_color(t_map *map, char *line)
 {
-	char **color;
+	char	**color;
 
-	if (ft_strchr(line, ','))
+	if (ft_strchr(line, ',') != 0)
 	{
 		color = ft_split(line, ',');
 		map -> points[map -> len].color = (long)strtol(color[1] + 2, NULL, 16);
@@ -64,7 +64,7 @@ int	load_map(char *file_name, t_map *map)
 	if (map -> limits.axes[X] == 0)
 		terminate_map(ERR_EMPTY);
 	fd = open(file_name, O_RDONLY);
-	if (fd < 3 || map -> points == NULL)
+	if (fd < 2 || map -> points == NULL)
 		return (0);
 	line = get_next_line(fd);
 	while (line != NULL)

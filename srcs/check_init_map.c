@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:38:35 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 18:47:59 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:48:37 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	check_line(char **map_line)
 	int	i;
 
 	i = 0;
-	while (map_line[i] && map_line [i][0] != '\n')
+	while (map_line[i] && map_line[i][0] != '\n')
 		i++;
-	if (i == 0 || (i == 1 && map_line [0][0] == '\n'))
+	if (i == 0 || (i == 1 && map_line[0][0] == '\n'))
 		terminate_map(ERR_EMPTY);
 	return (i);
 }
@@ -66,7 +66,7 @@ void	valid_map(char *file_name, t_map *map)
 		free(line);
 		double_free(splitted);
 		line = get_next_line(fd);
-		map -> total = map -> total + max;
+		map -> total += max;
 		map -> limits.axes[Y]++;
 		write(1, ".", 1);
 	}
