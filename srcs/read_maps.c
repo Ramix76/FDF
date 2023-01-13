@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 19:43:03 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/13 13:42:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_load_color(t_map *map, char *line)
 		double_free(color);
 	}
 	else
-		map -> points[map -> len].color = 0xFF00FF;
+		map -> points[map -> len].color = 0xFFFF00;
 }
 
 void	save_map_points(t_map *map, int nline, char *line)

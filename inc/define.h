@@ -6,12 +6,14 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:40 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/11 19:50:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/13 13:37:12 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
+
+# include <stdbool.h>
 
 # define X 0
 # define Y 1
@@ -19,6 +21,8 @@
 
 # define WINDOW_WIDTH 1920
 # define WINDOW_HEIGHT 1080
+
+# define BUFFER_SIZE 10
 
 # define ROJO 		0xc1272d
 # define VERDE		0x33cc55

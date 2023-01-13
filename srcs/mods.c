@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   mods.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 17:23:12 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/13 12:18:51 by framos-p         ###   ########.fr       */
+/*   Created: 2023/01/13 15:32:47 by framos-p          #+#    #+#             */
+/*   Updated: 2023/01/13 15:45:26 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <stdlib.h>
+#include "../inc/define.h"
+#include "../inc/utils.h"
 
-char	*get_next_line(int fd);
+void	zoom(t_point *points, int len, float scale)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (i < len)
+	{
+		points[i].axes[X] *= scale;
+		points[i].axes[Y] *= scale;
+		points[i].axes[Z] *= scale;
+		i++;
+	}
+}
