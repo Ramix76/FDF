@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:09:16 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/21 12:13:19 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:26:43 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line.h"
 
 typedef struct s_stack
 {
@@ -61,6 +60,7 @@ void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack**lst);
 void		ft_lstiter(t_list *lst, void (*f)(void*));
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
+char		*get_next_line(int fd);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strchr(const char *s, int c);

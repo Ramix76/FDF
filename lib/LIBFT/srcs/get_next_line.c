@@ -6,11 +6,12 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 17:24:53 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/22 10:52:52 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:23:51 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../../inc/define.h"
+#include "../inc/libft.h"
 
 static char	*extract_line(char *buffer)
 {

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:57:37 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/13 15:46:40 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:26:03 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdbool.h>
 # include <errno.h>
 # include <math.h>
+# include <fcntl.h>
 
 int		draw_line(t_meta *meta, t_point start, t_point end);
 int		load_map(char *file_name, t_map *map);

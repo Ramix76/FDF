@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/Users/framos-p/Desktop/FDF",
+            "binaryPath": "/Users/framos-p/Desktop/FDF/fdf",
+            "binaryArgs": ["test_maps/9.fdf"]
+        }
+    ]
+}

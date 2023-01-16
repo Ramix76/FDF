@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:40:53 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/13 15:52:20 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:18:50 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int	main(int argc, char **argv)
 	mlx_hook(meta.vars.win_ptr, 2, 0, key_press, &meta);
 	mlx_hook(meta.vars.win_ptr, 17, 0, terminate_windows, &meta);
 	mlx_loop(meta.vars.mlx_ptr);
+	draw_map(&meta);
 	return (0);
 }

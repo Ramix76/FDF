@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 17:15:55 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/13 15:55:30 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:18:53 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	control_keys1(int key, t_meta *meta)
 {
 	if (key == KEY_ESC)
 		terminate_windows(meta);
-	if (key == KEY_SUM)
+	if (key == KEY_SUM2)
 		meta -> map.scale *= 1.5;
-	if (key == KEY_RES)
+	if (key == KEY_RES2)
 		meta -> map.scale /= 1.5;
 	draw_map(meta);
 	return (0);

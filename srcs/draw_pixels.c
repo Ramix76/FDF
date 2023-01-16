@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:06 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/13 15:55:32 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:26:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	draw_line(t_meta *meta, t_point start, t_point end)
 {
 	t_point	alpha;
 	t_point	pixel;
-	int		pixels;
-	int		len;
+	float	pixels;
+	float	len;
 
 	alpha.axes[X] = end.axes[X] - start.axes[X];
 	alpha.axes[Y] = end.axes[Y] - start.axes[Y];
@@ -39,10 +39,12 @@ int	draw_line(t_meta *meta, t_point start, t_point end)
 	len = pixels;
 	alpha.axes[X] /= pixels;
 	alpha.axes[Y] /= pixels;
+	pixel.axes[X] = start.axes[X];
+	pixel.axes[Y] = start.axes[Y];
 	while (pixels > 0)
 	{
-		my_mlx_pixel_put(&meta -> data, pixel.axes[X], \
-				pixel.axes[Y], start.color);
+		my_mlx_pixel_put(&meta -> data, pixel.axes[X] + WINDOW_WIDTH / 2,
+			pixel.axes[Y] + WINDOW_HEIGHT / 2, start.color);
 		pixel.axes[X] += alpha.axes[X];
 		pixel.axes[Y] += alpha.axes[Y];
 		pixels = pixels - 1;
