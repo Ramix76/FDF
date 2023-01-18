@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:57:37 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/16 11:26:03 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/18 16:59:18 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ int		key_press(int key, t_meta *param);
 int		check_line(char **map_line);
 int		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		control_keys1(int key, t_meta *meta);
+void	rotationX(int len, t_point *points, t_point *proyected);
+void	rotationY(int len, t_point *points, t_point *proyected);
+void	rotationZ(int len, t_point *points, t_point *proyected);
+void	matrix_zero(float matrx[3][3]);
 void	zoom(t_point *points, int len, float sacle);
 void	double_free(char **ptr);
 void	draw_map(t_meta *meta);
@@ -40,5 +44,6 @@ void	map_init(t_map *map);
 void	valid_map(char *file_name, t_map *map);
 void	save_map_points(t_map *map, int nline, char *line);
 void	ft_load_color(t_map *map, char *line);
+t_point	matrix_mult(float matrix [3][3], t_point points);
 
 #endif

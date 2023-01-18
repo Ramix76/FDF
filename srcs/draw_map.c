@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:10:47 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/16 16:19:56 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/18 16:59:13 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ void	draw_map(t_meta *meta)
 	black_background(&meta -> data);
 	copy_map_points(meta -> map.points, copy, meta -> map.total);
 	zoom(copy, meta -> map.total, meta -> map.scale);
-	printf("valor de scale:%f\n", meta -> map.scale);
+	rotationX(meta -> map.total, copy, copy);
+	rotationY(meta -> map.total, copy, copy);
+	rotationZ(meta -> map.total, copy, copy);
 	draw_map_lines(meta, meta -> map.total, &meta -> map, copy);
 	free(copy);
 	mlx_put_image_to_window(meta -> vars.mlx_ptr, \
