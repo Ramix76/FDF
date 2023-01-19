@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:40:53 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/16 16:18:50 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:14:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		terminate_map(ERR_ARGS);
-	load_map(argv[1], &meta.map);
+	load_map(argv[1], &meta);
 	meta.vars.mlx_ptr = mlx_init();
 	meta.vars.win_ptr = mlx_new_window(meta.vars.mlx_ptr, \
 		WINDOW_WIDTH, WINDOW_HEIGHT, "FDF 42");

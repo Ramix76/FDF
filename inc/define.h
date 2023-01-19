@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 12:53:40 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:55:39 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:14:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ typedef struct	s_meta {
 	t_vars	vars;
 	t_data	data;
 	t_map	map;
+	t_point	point;
+	int		isometric;
 }	t_meta;
 
 #endif

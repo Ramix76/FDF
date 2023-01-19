@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 17:15:55 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:59:16 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:14:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,25 @@ int	control_keys1(int key, t_meta *meta)
 		meta -> map.scale /= 1.5;
 		draw_map(meta);
 	}
-/*	if (key == KEY_R)
+	if (key == KEY_I)
 	{
-		rotationX(meta -> map.total, copy, copy);
-		rotationY(meta -> map.total, copy, copy);
-		rotationZ(meta -> map.total, copy, copy);
+		meta -> isometric *= -1;
 		draw_map(meta);
-	}*/
+	}
+	if (key == KEY_Z)
+	{
+		meta -> map.divisor += 1;
+		if ((meta -> map.divisor) == 0)
+			meta -> map.divisor = 1;
+		draw_map(meta);
+	}
+	if (key == KEY_X)
+	{
+		meta -> map.divisor -= 1;
+		if ((meta -> map.divisor) == 0)
+			meta -> map.divisor = 1;
+		draw_map(meta);
+	}
 	return (0);
 }
 

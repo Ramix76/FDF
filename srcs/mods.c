@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:32:47 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:59:09 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:14:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	rotationX(int len, t_point *points, t_point *proyected)
 	int		i;
 
 	i = 0;
-	ang = 30;
+	ang = 60;
 	rad = ang * M_PI / 180;
 	matrix_zero(rotation_matrix);
 	rotation_matrix [0][0] = 1;
@@ -96,3 +96,14 @@ void	rotationZ(int len, t_point *points, t_point *proyected)
 	}
 }
 
+void	reduceZ(int len, t_point *points, float divisor)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		points[i].axes[Z] /= divisor;
+		i++;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:10:47 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:59:13 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:14:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,14 @@ void	draw_map(t_meta *meta)
 		return ;
 	black_background(&meta -> data);
 	copy_map_points(meta -> map.points, copy, meta -> map.total);
+	reduceZ(meta -> map.total, copy, meta -> map.divisor);
 	zoom(copy, meta -> map.total, meta -> map.scale);
-	rotationX(meta -> map.total, copy, copy);
-	rotationY(meta -> map.total, copy, copy);
-	rotationZ(meta -> map.total, copy, copy);
+	if (meta -> isometric == 1)
+	{
+		rotationX(meta -> map.total, copy, copy);
+		rotationY(meta -> map.total, copy, copy);
+		rotationZ(meta -> map.total, copy, copy);
+	}
 	draw_map_lines(meta, meta -> map.total, &meta -> map, copy);
 	free(copy);
 	mlx_put_image_to_window(meta -> vars.mlx_ptr, \

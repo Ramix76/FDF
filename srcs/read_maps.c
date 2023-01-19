@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:36:10 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:13:37 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:31:16 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,25 @@ void	save_map_points(t_map *map, int nline, char *line)
 	double_free(splitted);
 }
 
-int	load_map(char *file_name, t_map *map)
+int	load_map(char *file_name, t_meta *meta)
 {
 	int		nline;
 	int		fd;
 	char	*line;
 
 	nline = 0;
-	map_init(map);
-	valid_map(file_name, map);
-	map -> points = ft_calloc(map -> total, sizeof(t_point));
-	if (map -> limits.axes[X] == 0)
+	map_init(meta);
+	valid_map(file_name, &meta -> map);
+	meta -> map.points = ft_calloc(meta -> map.total, sizeof(t_point));
+	if (meta -> map.limits.axes[X] == 0)
 		terminate_map(ERR_EMPTY);
 	fd = open(file_name, O_RDONLY);
-	if (fd < 2 || map -> points == NULL)
+	if (fd < 2 || meta -> map.points == NULL)
 		return (0);
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		save_map_points(map, nline, line);
+		save_map_points(&meta -> map, nline, line);
 		nline++;
 		free(line);
 		line = get_next_line(fd);

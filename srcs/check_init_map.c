@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:38:35 by framos-p          #+#    #+#             */
-/*   Updated: 2023/01/18 16:59:11 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:32:54 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,21 @@
 #include "../inc/utils.h"
 #include "../inc/check_errors.h"
 
-void	map_init(t_map *map)
+void	map_init(t_meta *meta)
 {
-	map -> len = 0;
-	map -> total = 0;
-	map -> limits.axes[X] = 0;
-	map -> limits.axes[Y] = 0;
-	map -> ang[X] = 0;
-	map -> ang[Y] = 0;
-	map -> ang[Z] = 0;
-	map -> source.axes[X] = WINDOW_WIDTH / 2;
-	map -> source.axes[Y] = WINDOW_HEIGHT / 2;
-	map -> source.axes[Z] = 0;
-	map -> scale = 1;
-	map -> divisor = 1;
+	meta -> map.len = 0;
+	meta -> map.total = 0;
+	meta -> map.limits.axes[X] = 0;
+	meta -> map.limits.axes[Y] = 0;
+	meta -> map.ang[X] = 0;
+	meta -> map.ang[Y] = 0;
+	meta -> map.ang[Z] = 0;
+	meta -> map.source.axes[X] = WINDOW_WIDTH / 2;
+	meta -> map.source.axes[Y] = WINDOW_HEIGHT / 2;
+	meta -> map.source.axes[Z] = 0;
+	meta -> map.scale = 1;
+	meta -> map.divisor = 1;
+	meta -> isometric = 1;
 }
 
 int	check_line(char **map_line)
